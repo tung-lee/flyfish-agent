@@ -29,7 +29,7 @@
     "amqplib": "0.10.5",
     "better-sqlite3": "11.5.0",
     "dotenv": "^16.4.7",
-    "elizaos-plugin-sui": "0.1.8-alpha.5",
+    "elizaos-plugin-sui": "0.1.8-alpha.6",
     "fs": "0.0.1-security",
     "net": "1.0.2",
     "path": "0.12.7",
