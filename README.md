@@ -8,6 +8,9 @@ Open `src/character.ts` to modify the default character. Uncomment and edit.
 
 To load custom characters instead:
 - Use `pnpm start --characters="path/to/your/character.json"`
+```
+pnpm start --characters="./characters/suiHelper.character.json
+```
 - Multiple character files can be loaded simultaneously
 
 ### Add clients
