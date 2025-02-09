@@ -24,6 +24,7 @@ import {
   parseArguments,
 } from "./config/index.ts";
 import { initializeDatabase } from "./database/index.ts";
+import { sentimentAction } from "./plugin/sentiment-analysis/action.ts";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -62,7 +63,7 @@ export function createAgent(
       character.settings?.secrets?.WALLET_PUBLIC_KEY ? solanaPlugin : null,
     ].filter(Boolean),
     providers: [walletProvider],
-    actions: [transferToken, swapToken, deposit, getBalance, getToken, getPortfolio, withdraw, repay, borrow],
+    actions: [transferToken, swapToken, deposit, getBalance, getToken, getPortfolio, withdraw, repay, borrow, sentimentAction],
     services: [new SuiService()],
     managers: [],
     cacheManager: cache,
@@ -166,7 +167,7 @@ const startAgents = async () => {
   }
 
   const isDaemonProcess = process.env.DAEMON_PROCESS === "true";
-  if(!isDaemonProcess) {
+  if (!isDaemonProcess) {
     elizaLogger.log("Chat started. Type 'exit' to quit.");
     const chat = startChat(characters);
     chat();
