@@ -9,7 +9,7 @@ import {
 import { bootstrapPlugin } from "@elizaos/plugin-bootstrap";
 import { createNodePlugin } from "@elizaos/plugin-node";
 import { solanaPlugin } from "@elizaos/plugin-solana";
-import { borrow, repay, getToken, deposit, getBalance, getPortfolio, SuiService, swapToken, transferToken, withdraw, walletProvider, analyzeSentimentAction } from "elizaos-plugin-sui";
+import { borrow, repay, getToken, deposit, getBalance, getPortfolio, SuiService, swapToken, transferToken, withdraw, walletProvider, analyzeSentimentAction, chatData } from "elizaos-plugin-sui";
 import fs from "fs";
 import net from "net";
 import path from "path";
@@ -62,7 +62,7 @@ export function createAgent(
       character.settings?.secrets?.WALLET_PUBLIC_KEY ? solanaPlugin : null,
     ].filter(Boolean),
     providers: [walletProvider],
-    actions: [transferToken, swapToken, deposit, getBalance, getToken, getPortfolio, withdraw, repay, borrow, analyzeSentimentAction],
+    actions: [transferToken, swapToken, deposit, getBalance, getToken, getPortfolio, withdraw, repay, borrow, analyzeSentimentAction, chatData],
     services: [new SuiService()],
     managers: [],
     cacheManager: cache,
