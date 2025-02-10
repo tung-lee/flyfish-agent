@@ -28,7 +28,7 @@
     "@tavily/core": "0.0.2",
     "amqplib": "0.10.5",
     "better-sqlite3": "11.5.0",
-    "elizaos-plugin-sui": "0.1.8-alpha.10",
+    "elizaos-plugin-sui": "0.1.8-alpha.11",
     "fs": "0.0.1-security",
     "net": "1.0.2",
     "path": "0.12.7",
