@@ -6,6 +6,7 @@
   "scripts": {
     "build": "tsup src/index.ts --format esm --dts",
     "start": "tsc && node --loader ts-node/esm src/index.ts",
+    "start:sui-helper": "pnpm start --characters=./characters/suiHelper.character.json",
     "clean": "./scripts/clean.sh",
     "start:service:all": "pm2 start pnpm --name=\"all\" --restart-delay=3000 --max-restarts=10 -- run start:all",
     "stop:service:all": "pm2 stop all"
@@ -27,7 +28,7 @@
     "@tavily/core": "0.0.2",
     "amqplib": "0.10.5",
     "better-sqlite3": "11.5.0",
-    "elizaos-plugin-sui": "0.1.8-alpha.6",
+    "elizaos-plugin-sui": "0.1.8-alpha.9",
     "fs": "0.0.1-security",
     "net": "1.0.2",
     "path": "0.12.7",
