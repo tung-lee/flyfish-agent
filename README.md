@@ -16,6 +16,8 @@ FlyFish Agent is the **backend service** powered by **ElizaOS** that handles **A
 - [FlyFish Agent 🐟](#flyfish-agent-)
   - [Table of Contents](#table-of-contents)
   - [SuiHelper Character](#suihelper-character)
+  - [Architecture](#architecture)
+    - [Key Components](#key-components)
   - [License](#license)
 
 ## SuiHelper Character
@@ -45,6 +47,18 @@ The `elizaos-plugin-sui` 🔌 enables direct interaction with the **Sui blockcha
 - **Smart contract** interactions
 - **Token** transfers and swaps
 - **DeFi protocol** integrations
+
+## Architecture
+![agent-container](img/agent-container.png)
+
+### Key Components
+- **Agent Container**: Central management system for API and data processing
+- **External Services**:
+  - **Blockchain**: Sui Network integration for blockchain operations
+  - **LLM Service**: AI/language model processing
+- **Database Services**:
+  - **Database**: SQL/PostgreSQL for data storage
+  - **Cache Store**: Redis for high-performance caching
 
 ## License
 
