@@ -1,97 +1,65 @@
-# Eliza
+# FlyFish Agent 🐟
 
-## Edit the character files
+[![Follow me](https://img.shields.io/github/followers/Weminal-labs?label=follow%20me&style=social)](https://github.com/Weminal-labs)
+[![Follow Twitter](https://img.shields.io/twitter/follow/blueedgetechno?label=Follow%20me&style=social)](https://x.com/0xFlyFish_agent)
 
-Open `src/character.ts` to modify the default character. Uncomment and edit.
+FlyFish Agent is the **backend service** powered by **ElizaOS** that handles **AI interactions** and **blockchain operations**. This agent processes **natural language commands** and executes corresponding **blockchain actions**, particularly within the **Sui ecosystem**.
 
-### Custom characters
+<p align="center">
+  <a href="https://gitpoint.co/">
+    <img alt="GitPoint" title="GitPoint" src="img/banner.png" width="800">
+  </a>
+</p>
 
-To load custom characters instead:
-- Use `pnpm start --characters="path/to/your/character.json"`
-```
-pnpm start --characters="./characters/suiHelper.character.json
-```
-- Multiple character files can be loaded simultaneously
+## Table of Contents
 
-### Add clients
-```
-# in character.ts
-clients: [Clients.TWITTER, Clients.DISCORD],
+- [FlyFish Agent 🐟](#flyfish-agent-)
+  - [Table of Contents](#table-of-contents)
+  - [SuiHelper Character](#suihelper-character)
+  - [Architecture](#architecture)
+    - [Key Components](#key-components)
+  - [License](#license)
 
-# in character.json
-clients: ["twitter", "discord"]
-```
+## SuiHelper Character
 
-## Duplicate the .env.example template
+The **SuiHelper** is a specialized AI character included with FlyFish Agent that provides expert guidance for the **Sui blockchain** ecosystem. Key features include:
 
-```bash
-cp .env.example .env
-```
+- **Core Capabilities** 🚀
+  - **Sui blockchain** technical expertise
+  - **DeFi operations** (staking, yield farming, liquidity)
+  - **Security** and risk management
+  - **Market analysis** and tokenomics
+  - **NFTs** and **Move smart contracts**
 
-\* Fill out the .env file with your own values.
+- **Technical Integration** ⚙️
+  - **Atoma** model provider
+  - **Plugins**: 
+    - `elizaos-plugin-sui`: Our custom **Sui blockchain** integration plugin
+    - `@elizaos/plugin-bootstrap`: Core bootstrap functionality
 
-### Add login credentials and keys to .env
-```
-DISCORD_APPLICATION_ID="discord-application-id"
-DISCORD_API_TOKEN="discord-api-token"
-...
-OPENROUTER_API_KEY="sk-xx-xx-xxx"
-...
-TWITTER_USERNAME="username"
-TWITTER_PASSWORD="password"
-TWITTER_EMAIL="your@email.com"
-```
+- **Special Features** ✨
+  - Built-in **sentiment analysis** for market queries
+  - **Transaction handling** (swaps/deposits/transfers)
 
-## Install dependencies and start your agent
+The `elizaos-plugin-sui` 🔌 enables direct interaction with the **Sui blockchain**, allowing for:
+- Real-time **transaction monitoring**
+- **Wallet management**
+- **Smart contract** interactions
+- **Token** transfers and swaps
+- **DeFi protocol** integrations
 
-```bash
-pnpm i && pnpm start
-```
-Note: this requires node to be at least version 22 when you install packages and run the agent.
+## Architecture
+![agent-container](img/agent-container.png)
 
-## Run with Docker
+### Key Components
+- **Agent Container**: Central management system for API and data processing
+- **External Services**:
+  - **Blockchain**: Sui Network integration for blockchain operations
+  - **LLM Service**: AI/language model processing
+- **Database Services**:
+  - **Database**: SQL/PostgreSQL for data storage
+  - **Cache Store**: Redis for high-performance caching
 
-### Build and run Docker Compose (For x86_64 architecture)
+## License
 
-#### Edit the docker-compose.yaml file with your environment variables
-
-```yaml
-services:
-    eliza:
-        environment:
-            - OPENROUTER_API_KEY=blahdeeblahblahblah
-```
-
-#### Run the image
-
-```bash
-docker compose up
-```
-
-### Build the image with Mac M-Series or aarch64
-
-Make sure docker is running.
-
-```bash
-# The --load flag ensures the built image is available locally
-docker buildx build --platform linux/amd64 -t eliza-starter:v1 --load .
-```
-
-#### Edit the docker-compose-image.yaml file with your environment variables
-
-```yaml
-services:
-    eliza:
-        environment:
-            - OPENROUTER_API_KEY=blahdeeblahblahblah
-```
-
-#### Run the image
-
-```bash
-docker compose -f docker-compose-image.yaml up
-```
-
-# Deploy with Railway
-
-[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/template/aW47_j)
+This project is licensed under the MIT License - see the LICENSE file for details.
